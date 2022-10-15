@@ -1,53 +1,59 @@
-﻿namespace Zoo
+﻿using System.Collections;
+
+namespace Zoo
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            //skapar instanser av 5 olika djur.
+            //Creating instances of 5 different animals(classes).
             var wolf = new Wolf(name: "Luna", gender: "Tik", age: 5);
             var lynx = new Lynx(name: "Hunter", gender: "Hane", age: 3);
             var fox = new Fox(name: "Speedy", gender: "Tik");
             var dog = new Dog(name: "Ivar", gender: "Hane", age: 5);
             var eagle = new Eagle(name: "Drake");
 
-            //Printing all methods available for each animal.
-            wolf.PrintInfo();
-            wolf.MakeSound();
-            wolf.Sleep();
-            wolf.Awake();
-            wolf.Hunt();
+            //Adding all previous animals into a list.
+            var animals = new List<Animal>();
+            animals.Add(wolf);
+            animals.Add(lynx);
+            animals.Add(fox);
+            animals.Add(dog);
+            animals.Add(eagle);
 
-            Console.WriteLine("--------------------------------");
-            lynx.PrintInfo();
-            lynx.MakeSound();
-            lynx.Sleep();
-            lynx.Awake();
-            lynx.Pet();
-
-            Console.WriteLine("--------------------------------");
-            fox.PrintInfo();
-            fox.MakeSound();
-            fox.Sleep();
-            fox.Awake();
-            fox.Play();
-            fox.Hunt();
-
-            Console.WriteLine("--------------------------------");
-            dog.PrintInfo();
-            dog.MakeSound();
-            dog.Sleep();
-            dog.Awake();
-            dog.Hunt();
-            dog.Greet();
-
-            Console.WriteLine("--------------------------------");
-            eagle.PrintInfo();
-            eagle.MakeSound();
-            eagle.Sleep();
-            eagle.Awake();
-            eagle.Fly();
-
+            for (int i = 0; i < animals.Count - 1; i++)
+            {
+                animals[i].PrintInfo();
+                animals[i].MakeSound();
+                animals[i].Sleep();
+                animals[i].Awake();
+                if(i == 0)
+                {
+                    ((Wolf)animals[i]).Hunt();
+                }
+                if(i == 1)
+                {
+                    ((Lynx)animals[i]).Pet();
+                }
+                
+                if(i == 2)
+                {
+                    ((Fox)animals[i]).Hunt();
+                    ((Fox)animals[i]).Play();                                        
+                }
+                
+                if(i == 3)
+                {
+                    ((Dog)animals[i]).Hunt();
+                    ((Dog)animals[i]).Greet();
+                }
+                if(i == 4)
+                {
+                    ((Eagle)animals[i]).Fly();
+                }
+                
+                
+            }
             Console.ReadKey();
         }
     }
