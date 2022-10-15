@@ -1,4 +1,4 @@
-# Vad du ska göra
+# Lab-6 - Arv
 
 Tänk dig att du ska skapa en grund för ett program som hanterar djur på ett zoo.
 
