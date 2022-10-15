@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //skapar instanser av 5 olika djur.
+            //Creating instances of 5 different animals(classes).
             var wolf = new Wolf(name: "Luna", gender: "Tik", age: 5);
             var lynx = new Lynx(name: "Hunter", gender: "Hane", age: 3);
             var fox = new Fox(name: "Speedy", gender: "Tik");
