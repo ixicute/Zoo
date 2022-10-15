@@ -1,31 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Zoo
+﻿namespace Zoo
 {
     internal class Wolf : Animal
     {
-        public Wolf(string name, string gender, int age)
+        //Protected so that inhereted classes also have access to the property.
+        protected string Prey { get; set; }
+        public Wolf(string name = "Okänt", string gender = "Okänt", string sound = "Morrar", string type = "Varg", int age = 2)
+             : base(name, gender, sound, type, age)
         {
-            this.Name = name;
-            this.Gender = gender;
-            this.Age = age;
-            this.Sound = "aaaooooooo";
-            ID++;
-        }
-        public string AnimalName
-        {
-            get { return Name; }
-            set { Name = value; }
-        }
-        public int AnimalID
-        {
-            get { return ID; }
-            set { ID = value; }
+            this.Prey = "";
         }
 
+        /// <summary>
+        /// Prints out randomized result of hunting.
+        /// </summary>
+        public virtual void Hunt()
+        {
+            int temp = rand.Next(1, 4);
+
+            switch (temp)
+            {
+                case 1:
+                    Prey = $"{AnimalName} har fångat en hare!";
+                    break;
+                case 2:
+                    Prey = $"{AnimalName} har fångat en bäver";
+                    break;
+                case 3:
+                    Prey = $"{AnimalName} har lyckats fånga en hjort!";
+                    break;
+            }
+
+            string howl = $"{AnimalName} börjar tjuta: awwwwooooooooooooo \n" + Prey;
+
+            Console.WriteLine(howl);
+        }
     }
 }
