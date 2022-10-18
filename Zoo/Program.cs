@@ -14,12 +14,7 @@ namespace Zoo
             var eagle = new Eagle(name: "Drake");
 
             //Adding all previous animals into a list.
-            var animals = new List<Animal>();
-            animals.Add(wolf);
-            animals.Add(lynx);
-            animals.Add(fox);
-            animals.Add(dog);
-            animals.Add(eagle);
+            var animals = new List<Animal>() { wolf, lynx, fox, dog, eagle};
 
             for (int i = 0; i < animals.Count - 1; i++)
             {
@@ -51,8 +46,8 @@ namespace Zoo
                 {
                     ((Eagle)animals[i]).Fly();
                 }
-                
-                
+
+                Console.WriteLine();                
             }
             Console.ReadKey();
         }
