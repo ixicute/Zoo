@@ -16,6 +16,8 @@ namespace Zoo
             //Adding all previous animals into a list.
             var animals = new List<Animal>() { wolf, lynx, fox, dog, eagle};
 
+            //Looping through all inherited methods
+            //within the list and inside of inherited classes.
             for (int i = 0; i < animals.Count - 1; i++)
             {
                 animals[i].PrintInfo();
@@ -46,7 +48,6 @@ namespace Zoo
                 {
                     ((Eagle)animals[i]).Fly();
                 }
-
                 Console.WriteLine();
             }
             Console.ReadKey();
