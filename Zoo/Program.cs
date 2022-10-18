@@ -51,9 +51,7 @@ namespace Zoo
                 {
                     ((Eagle)animals[i]).Fly();
                 }
-                
-                
-            }
+            }            
             Console.ReadKey();
         }
     }
