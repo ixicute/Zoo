@@ -18,7 +18,7 @@ namespace Zoo
 
             //Looping through all inherited methods
             //within the list and inside of inherited classes.
-            for (int i = 0; i < animals.Count ; i++)
+            for (int i = 0; i < animals.Count; i++)
             {
                 animals[i].PrintInfo();
                 animals[i].MakeSound();
